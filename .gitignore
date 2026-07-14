@@ -1,2 +1,9 @@
-node_modules
+﻿node_modules
 .env
+.env.example
+.codex/
+server_err.txt
+server_log.txt
+_test_encoding.txt
+project-rules.md
+start.bat
