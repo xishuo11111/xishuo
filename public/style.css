@@ -1,0 +1,116 @@
+/* Kiki - Internet Operations Portfolio - Custom Styles */
+
+html { scroll-behavior: smooth; }
+::selection { background: #3B82F6; color: white; }
+* { -webkit-tap-highlight-color: transparent; }
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+#ferrofluid-container {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  overflow: hidden; z-index: 0;
+}
+#ferrofluid-container canvas {
+  position: absolute; top: 0; left: 0;
+  width: 100% !important; height: 100% !important;
+}
+
+.nav-link {
+  position: relative; transition: color 0.2s;
+}
+.nav-link::after {
+  content: ""; position: absolute; bottom: -4px; left: 50%;
+  transform: translateX(-50%); width: 0; height: 1.5px;
+  background: #0F172A; border-radius: 2px; transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-link.active { color: #0F172A; }
+
+.skill-tag {
+  display: inline-block; padding: 4px 14px; font-size: 0.75rem;
+  font-weight: 500; border-radius: 8px; color: #475569;
+  background: #F1F5F9; border: 1px solid #E2E8F0;
+  transition: all 0.2s ease; cursor: default;
+}
+.skill-tag:hover {
+  background: #EFF6FF; border-color: #3B82F6; color: #3B82F6;
+  transform: translateY(-1px);
+}
+
+.exp-card { transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+.exp-card:hover { box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04); }
+
+.project-card {
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+}
+.project-card .metric-badge {
+  display: inline-block; padding: 3px 10px; border-radius: 6px;
+  font-size: 0.75rem; font-weight: 600;
+  background: #F0FDF4; color: #16A34A;
+}
+.project-card .company-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-size: 0.6875rem; font-weight: 500;
+  background: #EFF6FF; color: #3B82F6;
+}
+
+.contact-card { transition: all 0.3s ease; }
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+#chatMessages::-webkit-scrollbar { width: 4px; }
+#chatMessages::-webkit-scrollbar-track { background: transparent; }
+#chatMessages::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 8px; }
+
+.message-enter { animation: msgFadeIn 0.3s ease; }
+@keyframes msgFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.chat-loading-dot { animation: loadBounce 1.2s infinite; }
+.chat-loading-dot:nth-child(2) { animation-delay: 0.15s; }
+.chat-loading-dot:nth-child(3) { animation-delay: 0.3s; }
+@keyframes loadBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.3; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+#chatInput:focus { box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+
+.animate-pulse-slow {
+  animation: pulseSlow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulseSlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+}
+
+.mobile-nav-link { transition: all 0.2s ease; }
+.mobile-nav-link:hover { color: #0F172A !important; }
+
+@media (max-width: 640px) {
+  #hero h1 { font-size: 2.25rem; }
+  .glass-card { backdrop-filter: blur(8px); }
+}
