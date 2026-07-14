@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "xishuo-resume-portfolio",
   "builds": [
     {
       "src": "api/index.js",
@@ -16,8 +15,5 @@
       "src": "/(.*)",
       "dest": "public/$1"
     }
-  ],
-  "env": {
-    "DEEPSEEK_API_KEY": "@deepseek_api_key"
-  }
+  ]
 }
