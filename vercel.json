@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "xishuo-resume",
+  "name": "xishuo-resume-portfolio",
   "builds": [
     {
       "src": "api/index.js",
